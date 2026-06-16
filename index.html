@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Jean Edouard · Portfolio CV Ingénieur Génie Électrique</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #eef2f5;
+            color: #1e2f3a;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        .cv-portfolio {
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 2rem;
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 30px 50px -20px rgba(0,0,0,0.25);
+            overflow: hidden;
+        }
+        .sidebar {
+            background: #0f2a2f;
+            color: #e9f3f0;
+            padding: 2rem 1.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+        }
+        .photo-pro {
+            text-align: center;
+        }
+        .photo-frame {
+            width: 150px;
+            height: 150px;
+            background: #1f4e5e;
+            border-radius: 50%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid #9bc4d0;
+            overflow: hidden;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+        }
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .sidebar h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-top: 0.8rem;
+            text-align: center;
+            letter-spacing: -0.3px;
+            color: white;
+        }
+        .sidebar .badge-title {
+            background: #235b64;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: 0.35rem 0;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 0.3rem;
+        }
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: 0.3rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.8rem;
+            color: #cbdde2;
+        }
+        .contact-item i {
+            width: 26px;
+            font-size: 1rem;
+            color: #7fc1d4;
+        }
+        .divider {
+            height: 1px;
+            background: #2a5f6b;
+            margin: 0.5rem 0;
+        }
+        .skill-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 0.6rem;
+        }
+        .skill-pills span {
+            background: #1a464f;
+            padding: 0.3rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+        .lang-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            margin-bottom: 0.6rem;
+        }
+        .main-content {
+            padding: 2rem 2rem 2rem 1.8rem;
+            background: white;
+        }
+        .section {
+            margin-bottom: 2rem;
+        }
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #103f47;
+            border-left: 5px solid #2d8f9c;
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .exp-card {
+            background: #fafeff;
+            border-radius: 1rem;
+            padding: 1rem 1.2rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #e2edf0;
+        }
+        .exp-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.3rem;
+        }
+        .exp-title {
+            font-weight: 800;
+            font-size: 1rem;
+            color: #0f4b55;
+        }
+        .exp-date {
+            font-size: 0.7rem;
+            background: #e3f0f2;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+        .exp-lieu {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #2c6b78;
+            margin-bottom: 0.5rem;
+        }
+        .exp-desc {
+            font-size: 0.85rem;
+            color: #2a4953;
+            padding-left: 0.5rem;
+            border-left: 2px solid #c4e0e6;
+            margin-top: 0.4rem;
+        }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+        .photo-card {
+            background: #f5fafc;
+            border-radius: 1.2rem;
+            overflow: hidden;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        .photo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px -8px rgba(0,0,0,0.15);
+        }
+        .photo-card img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            display: block;
+        }
+        .photo-caption {
+            padding: 0.6rem 0.6rem 0.8rem;
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-align: center;
+            background: white;
+            color: #1e5a66;
+            border-top: 1px solid #dcf0f2;
+        }
+        .inline-badge {
+            background: #e4f3f5;
+            color: #0f6a7a;
+            font-size: 0.7rem;
+            border-radius: 20px;
+            padding: 0.2rem 0.7rem;
+            display: inline-block;
+            margin-right: 0.5rem;
+            margin-top: 0.3rem;
+        }
+        footer {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.7rem;
+            color: #66818b;
+        }
+        .btn-cv {
+            background: #2d8f9c;
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+            cursor: pointer;
+            width: fit-content;
+        }
+        @media (max-width: 800px) {
+            .cv-portfolio {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                text-align: center;
+            }
+            .contact-item {
+                justify-content: center;
+            }
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1100;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .lightbox-img {
+            max-width: 85%;
+            max-height: 85%;
+            border-radius: 1rem;
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+        }
+        .close-light {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            font-size: 2.5rem;
+            color: white;
+            font-weight: bold;
+        }
+        .instruction-note {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 0.8rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="cv-portfolio">
+        <aside class="sidebar">
+            <div class="photo-pro">
+                <div class="photo-frame">
+                    <!-- ⭐ PHOTO DE PROFIL ⭐ -->
+                    <!-- Remplacez "profil.jpg" par le nom exact de votre photo de profil -->
+                    <img src="profil.jpg" alt="Jean Edouard portrait" onerror="this.src='https://randomuser.me/api/portraits/men/32.jpg'">
+                </div>
+                <h1>RAHERINOMENJANAHARY<br>Jean Edouard</h1>
+                <div class="badge-title">Ingénieur en Génie Électrique · Maintenance Industrielle</div>
+            </div>
+            <div class="contact-list">
+                <div class="contact-item"><i class="fas fa-phone-alt"></i> +261 32 03 600 27 (WhatsApp)</div>
+                <div class="contact-item"><i class="fas fa-envelope"></i> 0107edouard@gmail.com</div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Antsiranana / Mahajanga · Madagascar</div>
+                <div class="contact-item"><i class="fas fa-user-check"></i> 49 ans, marié, 3 enfants</div>
+            </div>
+            <div class="divider"></div>
+            <div>
+                <div style="font-weight:600; margin-bottom:0.5rem;"><i class="fas fa-microchip"></i> Compétences techniques</div>
+                <div class="skill-pills">
+                    <span>Centrales thermiques</span><span>Groupes CAT & John Deere</span><span>Froid industriel</span>
+                    <span>Automatisme & régulation</span><span>Gestion de projet</span><span>HACCP</span><span>Logiciel CAT ET</span>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div>
+                <div style="font-weight:600; margin-bottom:0.5rem;"><i class="fas fa-language"></i> Langues</div>
+                <div class="lang-item"><span>Français</span><span>Courant (expert)</span></div>
+                <div class="lang-item"><span>Anglais</span><span>Intermédiaire technique</span></div>
+                <div class="lang-item"><span>Malagasy</span><span>Natif</span></div>
+            </div>
+            <div class="btn-cv" id="telechargerCvBtn"><i class="fas fa-download"></i> Télécharger CV (PDF)</div>
+        </aside>
+
+        <main class="main-content">
+            <!-- Instructions pour l'utilisateur (à supprimer après ajout des photos) -->
+            <div class="instruction-note" id="instructionNote">
+                <i class="fas fa-info-circle"></i> <strong>Comment ajouter vos photos :</strong><br>
+                1. Placez ce fichier HTML dans un dossier.<br>
+                2. Ajoutez vos photos dans le MÊME dossier.<br>
+                3. Nommez votre photo de profil : <strong>profil.jpg</strong><br>
+                4. Nommez vos 12 photos : <strong>galerie1.jpg</strong> à <strong>galerie12.jpg</strong><br>
+                5. Actualisez la page. Les photos apparaîtront automatiquement !
+            </div>
+
+            <div class="section">
+                <div class="section-title"><i class="fas fa-user-tie"></i> Synthèse professionnelle</div>
+                <p>Cadre expérimenté avec plus de 20 ans de carrière dans la maintenance industrielle et la gestion de centrales thermiques, frigorifiques, et traitements d’eau. Actuellement Chef de Département Maintenance chez AQUALMA Moramba (Groupe UNIMA). Rigueur, logique et forte capacité à manager des équipes sur sites isolés.</p>
+            </div>
+
+            <div class="section">
+                <div class="section-title"><i class="fas fa-briefcase"></i> Expériences vécues sur le terrain</div>
+                
+                <div class="exp-card">
+                    <div class="exp-header"><span class="exp-title">Chef de Département Maintenance</span><span class="exp-date">Mars 2026 – aujourd'hui</span></div>
+                    <div class="exp-lieu">AQUALMA Moramba · Groupe UNIMA</div>
+                    <div class="exp-desc">Responsable de la maintenance du site : 2 centrales thermiques, traitement d’eau de mer, chambres froides, reefers, moyens roulants et bateaux.</div>
+                </div>
+
+                <div class="exp-card">
+                    <div class="exp-header"><span class="exp-title">Adjoint du chef de département Maintenance</span><span class="exp-date">Oct 2025 – Mars 2026</span></div>
+                    <div class="exp-lieu">NBS · GROUPE UNIMA – Ambilobe</div>
+                    <div class="exp-desc">Management de la maintenance du site NBS, intérim sur Aqualma Moramba. Supervision des équipes et optimisation des process.</div>
+                </div>
+
+                <div class="exp-card">
+                    <div class="exp-header"><span class="exp-title">Adjoint du Chef de Département Maintenance</span><span class="exp-date">Oct 2010 – Oct 2025</span></div>
+                    <div class="exp-lieu">LGA - OSO FARMING (Les Gambas de l’Ankarana)</div>
+                    <div class="exp-desc">Supervision de 6 services, élaboration du budget, pilotage d’actions de dépollution électrique, membre équipe HACCP.</div>
+                </div>
+
+                <div class="exp-card">
+                    <div class="exp-header"><span class="exp-title">Chef de service Maintenance Industrielle</span><span class="exp-date">Nov 2007 – Oct 2010</span></div>
+                    <div class="exp-lieu">LGA Usine de traitement de crevettes</div>
+                    <div class="exp-desc">Responsable de l’usine, station de pompage eau de mer, centrale thermique (5x365kVA), centrale frigorifique, osmose inverse.</div>
+                </div>
+                <div class="exp-card">
+                    <div class="exp-header"><span class="exp-title">Adjoint du Chef de Service Maintenance</span><span class="exp-date">Mai 2002 – Nov 2007</span></div>
+                    <div class="exp-lieu">LGA / OSO FARMING</div>
+                    <div class="exp-desc">Montage et démarrage de l’usine avec prestataires YORK, organisation maintenance, gestion hydrocarbures.</div>
+                </div>
+                <div class="exp-card">
+                    <div class="exp-header"><span class="exp-title">Chef de parc matériel électrique / Quart Usine</span><span class="exp-date">Juin 1999 – Fév 2002</span></div>
+                    <div class="exp-lieu">AQUALMA (Groupe UNIMA)</div>
+                    <div class="exp-desc">Responsable du réseau de distribution électrique (GE 4x365kVA), encadrement des équipes de quart.</div>
+                </div>
+            </div>
+
+            <!-- GALERIE PHOTOS : 12 photos personnalisées -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-camera-retro"></i> Galerie · Mes expériences vécues terrain</div>
+                <p style="font-size:0.8rem; margin-bottom:0.5rem;">Vos 12 photos d'interventions terrain, centrales thermiques, équipes et maintenance industrielle.</p>
+                <div class="photo-grid" id="photosGrid"></div>
+                <div style="margin-top: 0.7rem;">
+                    <span class="inline-badge"><i class="fas fa-hard-hat"></i> Plus de 20 ans d'interventions terrain</span>
+                    <span class="inline-badge"><i class="fas fa-ship"></i> Sites: Aqualma, LGA, NBS, Unima</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title"><i class="fas fa-graduation-cap"></i> Formations & certifications</div>
+                <div class="exp-card" style="background:#fbfefe;">
+                    <div><strong>▪ 2021 :</strong> Logiciel de diagnostic John Deere « Service Advisor »</div>
+                    <div><strong>▪ 2019 :</strong> Management d’équipe & gestion de crise – Saint Cyr Coëtquidan France</div>
+                    <div><strong>▪ 2018 :</strong> Exploitation logiciel CAT ET – Henri Fraise</div>
+                    <div><strong>▪ 2009 :</strong> Sécurité de base (survie en mer, incendie, premiers secours)</div>
+                    <div><strong>▪ 1998 :</strong> Ingénieur en Génie Électrique – ESPA Antsiranana</div>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-top:0.5rem;">
+                <div><i class="fas fa-heart" style="color:#2d8f9c;"></i> Voyage · Caricature · Innovations techniques</div>
+                <div><i class="fas fa-id-card"></i> Permis VL et Moto</div>
+            </div>
+            <footer>© 2026 Jean Edouard – CV interactif & portfolio terrain – Photos personnelles</footer>
+        </main>
+    </div>
+</div>
+
+<div id="lightboxModal" class="lightbox">
+    <span class="close-light">&times;</span>
+    <img class="lightbox-img" id="lightboxImage" src="" alt="agrandissement">
+</div>
+
+<script>
+    // ============================================================
+    // CONFIGURATION PHOTOS - MODIFIEZ ICI SELON VOS FICHIERS
+    // ============================================================
+    
+    // Liste de vos 12 photos de galerie
+    // Nommez vos fichiers : galerie1.jpg, galerie2.jpg ... galerie12.jpg
+    // Vous pouvez aussi modifier les légendes ci-dessous
+    const mesPhotos = [
+        { fichier: "galerie1.jpg", legende: "Maintenance centrale thermique" },
+        { fichier: "galerie2.jpg", legende: "Réparation moteur CAT" },
+        { fichier: "galerie3.jpg", legende: "Supervision armoire électrique" },
+        { fichier: "galerie4.jpg", legende: "Dépannage groupe froid" },
+        { fichier: "galerie5.jpg", legende: "Équipe maintenance terrain" },
+        { fichier: "galerie6.jpg", legende: "Contrôle régulation industrielle" },
+        { fichier: "galerie7.jpg", legende: "Station pompage eau de mer" },
+        { fichier: "galerie8.jpg", legende: "Diagnostic électronique" },
+        { fichier: "galerie9.jpg", legende: "Installation tableau électrique" },
+        { fichier: "galerie10.jpg", legende: "Visite chantier NBS" },
+        { fichier: "galerie11.jpg", legende: "Formation sécurité incendie" },
+        { fichier: "galerie12.jpg", legende: "Équipe maintenance AQUALMA" }
+    ];
+
+    // ============================================================
+    // NE RIEN MODIFIER CI-DESSOUS
+    // ============================================================
+    
+    const gridContainer = document.getElementById('photosGrid');
+    
+    function buildGallery() {
+        if(!gridContainer) return;
+        gridContainer.innerHTML = '';
+        
+        mesPhotos.forEach(photo => {
+            const card = document.createElement('div');
+            card.className = 'photo-card';
+            const img = document.createElement('img');
+            img.src = photo.fichier;
+            img.alt = photo.legende;
+            img.loading = 'lazy';
+            img.onerror = function() {
+                this.src = "https://placehold.co/400x400/e0e0e0/999?text=Photo+manquante";
+                this.alt = "Photo non trouvée";
+            };
+            img.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openLightbox(photo.fichier, photo.legende);
+            });
+            const caption = document.createElement('div');
+            caption.className = 'photo-caption';
+            caption.innerText = photo.legende;
+            card.appendChild(img);
+            card.appendChild(caption);
+            gridContainer.appendChild(card);
+        });
+    }
+
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxImage = document.getElementById('lightboxImage');
+    
+    function openLightbox(src, altText) {
+        lightboxImage.src = src;
+        lightboxImage.alt = altText || "photo terrain";
+        lightboxModal.style.display = 'flex';
+    }
+    
+    function closeLightbox() {
+        lightboxModal.style.display = 'none';
+    }
+    
+    if(lightboxModal) {
+        lightboxModal.addEventListener('click', function(e) {
+            if(e.target === lightboxModal || e.target.classList.contains('close-light')) {
+                closeLightbox();
+            }
+        });
+        const closeSpan = lightboxModal.querySelector('.close-light');
+        if(closeSpan) closeSpan.addEventListener('click', closeLightbox);
+    }
+
+    buildGallery();
+
+    // Vérification des photos et affichage d'alerte si absentes
+    setTimeout(() => {
+        const images = document.querySelectorAll('.photo-card img');
+        let missingCount = 0;
+        images.forEach(img => {
+            if(img.src.includes('placehold.co') || img.naturalWidth === 0) {
+                missingCount++;
+            }
+        });
+        if(missingCount > 0 && document.getElementById('instructionNote')) {
+            document.getElementById('instructionNote').style.background = "#ffe0b3";
+            document.getElementById('instructionNote').innerHTML = '<i class="fas fa-exclamation-triangle"></i> <strong>Photos non trouvées !</strong><br>Placez vos photos dans le MÊME dossier que ce fichier HTML.<br>• Profil : <strong>profil.jpg</strong><br>• Galerie : <strong>galerie1.jpg</strong> à <strong>galerie12.jpg</strong>';
+        }
+    }, 500);
+
+    const btnDownload = document.getElementById('telechargerCvBtn');
+    if(btnDownload) {
+        btnDownload.addEventListener('click', () => {
+            alert("📄 Téléchargement du CV complet de Jean Edouard (format PDF).\nIngénieur Génie Électrique, plus de 20 ans d'expérience.");
+            const link = document.createElement('a');
+            const cvContent = `RAHERINOMENJANAHARY Jean Edouard - INGENIEUR GENIE ELECTRIQUE\nContact: +261320360027 / 0107edouard@gmail.com\n\nEXPERIENCE:\n- Mars 2026 à ce jour: Chef Département Maintenance AQUALMA Moramba\n- Oct 2025 - Mars 2026: Adjoint NBS GROUPE UNIMA\n- Oct 2010 - Oct 2025: Adjoint maintenance LGA OSO FARMING\n- Nov 2007-Oct 2010: Chef service maintenance industrielle\n- 1999-2002: Chef de parc électrique AQUALMA\n\nFORMATIONS: Ingénieur ESPA 1998, Management St Cyr, CAT ET, John Deere Advisor, HACCP...`;
+            const blob = new Blob([cvContent], {type: 'application/pdf'});
+            const url = URL.createObjectURL(blob);
+            link.href = url;
+            link.download = 'CV_Jean_Edouard_Raherinomenjanahary.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        });
+    }
+</script>
+</body>
+</html>
